@@ -4,17 +4,38 @@
 This repository contains a Spring Boot-based Book Management System that provides RESTful APIs for managing book records in a library. The system allows users to perform CRUD operations on books, including adding, retrieving, updating, and deleting books. It utilizes a centralized logging mechanism to track and record API operations, ensuring transparency and easier debugging.
 
 # Key Points:
-CRUD Operations: Implements Create, Read, Update, and Delete operations for book entities via RESTful endpoints.
+* CRUD Operations: Implements Create, Read, Update, and Delete operations for book entities via RESTful endpoints.
+* Logging: Uses SLF4J with Logback for logging key actions such as fetching, adding, updating, and deleting books, providing detailed operational logs.
+* Repository Integration: Connects to a BookRepository that interacts with the database to persist and retrieve book records.
+* Response Handling: Utilizes ResponseEntity to provide appropriate HTTP status codes and responses, ensuring clear communication of operation results.
+* Error Handling: Includes basic error handling for scenarios where a book is not found, returning 404 Not Found for missing resources.
+* Path Variable Usage: Extracts book IDs from URL paths to identify specific book records for retrieval, update, or deletion.
 
-Logging: Uses SLF4J with Logback for logging key actions such as fetching, adding, updating, and deleting books, providing detailed operational logs.
+# Project Structure
+librarymanagement ├── src │ ├── main │ │ ├── java │ │ │ └── com.example.librarymanagement │ │ │ ├── LibrarymanagementApplication.java │ │ │ ├── controller │ │ │ │ ├── BookController.java │ │ │ │ └── HomeController.java │ │ │ ├── model │ │ │ │ └── Book.java │ │ │ └── repository │ │ │ └── BookRepository.java │ ├── resources │ │ ├── static │ │ │ └── index.html │ │ └── templates │ │ └── application.properties ├── target │ ├── generated-sources/annotations │ ├── generated-test-sources/test-annotations ├── .mvn ├── .vscode ├── .gitignore ├── HELP.md ├── mvnw ├── mvnw.cmd └── pom.xml
 
-Repository Integration: Connects to a BookRepository that interacts with the database to persist and retrieve book records.
+Technologies Used
+* Spring Boot
+* Spring Data JPA
+* Java 17
+* Maven
 
-Response Handling: Utilizes ResponseEntity to provide appropriate HTTP status codes and responses, ensuring clear communication of operation results.
+# To Run:
+Clone the repository:
+```bash
+ git clone https://github.com/meena-sharma/Library_Management_System
+cd librarymanagementsystem 
+```
 
-Error Handling: Includes basic error handling for scenarios where a book is not found, returning 404 Not Found for missing resources.
+Open the project in Visual Studio Code.
 
-Path Variable Usage: Extracts book IDs from URL paths to identify specific book records for retrieval, update, or deletion.
+2.Run the project:
+
+Use the built-in Spring Boot features to run the application directly from the IDE.
+
+3.Access the application:
+
+The REST API will be available at `(http://localhost:8081/)`. The home page can be accessed at `(http://localhost:8081/index.html)`.
 
 # Screenshots:
 Create Operation:
